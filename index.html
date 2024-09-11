@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSX and Dynamic Rendering in React</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // JavaScript variable for the dynamic content
+        const text = "Seize the day";
+        
+        // Boolean variable for conditional rendering
+        const showText = true; // Change this to false to render "Nothing to show"
+
+        // JSX element with conditional rendering
+        const element = (
+            <div>
+                <h1>JSX and Dynamic Rendering</h1>
+                {/* Conditional rendering using the boolean variable */}
+                {showText ? <p>{text}</p> : <p>Seize the day</p>}
+            </div>
+        );
+
+        // Rendering the element to the DOM
+        ReactDOM.render(element, document.getElementById('root'));
+    </script>
+</body>
+</html>
